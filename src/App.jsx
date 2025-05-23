@@ -1,9 +1,14 @@
-import "./App.css"
-import ProductTab from "./ProductTab.jsx"; 
-
+import './App.css';
+import ProductIndex from './ProductIndex';
+import MsgBoxIndex from './MsgBoxIndex';
 
 function App() {
-  return <ProductTab/>;
+  return (
+    <>
+      <MsgBoxIndex/>
+      <ProductIndex/>
+    </>
+  );
 }
 
-export default App
+export default App;

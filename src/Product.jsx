@@ -1,19 +1,17 @@
-import "./Product.css"
+import './Product.css';
 
-function Product({title, price=1000, feature1 = [], feature2= {}}) {
-    // let list = feature1.map((feature1)=><li>{feature1}</li>);
-    let isDiscount = price >= 30000; 
-    let styles = {backgroundColor: isDiscount ? "red" : null};
-
-    return(
+function Product({title, price=0, features, features2}) {
+  let isDiscount=price>500;
+  let styles = {backgroundColor: isDiscount ?  "red" : "" };
+  return (
     <div className="Product" style={styles}>
-        <h3>{title}</h3>
-        <h5>Price: {price}</h5>
-        {isDiscount ? <p>Discount of 5%</p> : null}
-        {/* <p>{feature1.map((feature1)=><li>{feature1}</li>)}</p>
-        <p>{feature2.b}</p> */}
+      <h3>{title}</h3>
+      <h5>Price: ${price}</h5>
+      <h5>{features.map((features) => <li>{features}</li>)}</h5>
+      <p>Another Features: {features2}</p>
+      {isDiscount && <p>Discount of 10%</p>}
     </div>
-    );
+  );
 }
 
-export default Product;
+export { Product };
